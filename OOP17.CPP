@@ -1,0 +1,65 @@
+#include<iostream.h>
+#include<conio.h>
+class A
+{
+ protected:
+ int a;
+ public:
+ void get_a(int aa)
+ {
+  a=aa;
+ }
+ void show()
+ {
+ cout<<"a is: "<<a<<endl;
+ }
+};
+class B:public A
+{
+ protected:
+ int b;
+ public:
+ void get_b(int bb)
+ {
+  b=bb;
+ }
+ void show()
+ {
+ cout<<"b is: "<<b<<endl;
+ }
+};
+class C
+{
+ protected:
+ int c;
+ public:
+ void get_c(int cc)
+ {
+  c=cc;
+ }
+ void show()
+ {
+ cout<<"c is: "<<c<<endl;
+ }
+};
+class D:public B,public C
+{
+public:
+void display()
+{
+ A::show();
+ B::show();
+ C::show();
+ cout<<"The product of a,b and c is:  "<<a*b*c<<endl;
+}
+};
+void main()
+{
+ clrscr();
+ D d;
+ d.get_a(4);
+ d.get_b(8);
+ d.get_c(12);
+ d.display();
+ getch();
+}

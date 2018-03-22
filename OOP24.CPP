@@ -1,0 +1,25 @@
+#include<iostream.h>
+#include<conio.h>
+#include<stdio.h>
+#include<string.h>
+#include<iomanip.h>
+void main()
+{
+ clrscr();
+ char str[100];
+ int l=0,w=0,c=0;
+ cout<<"Enter a text\n";
+ gets(str);
+ cout<<setw(5)<<"No. of lines"<<setw(15)<<"No. of words"<<setw(22)<<"No. of characters\n\n";
+ c=strlen(str);
+ for(int i=0;i<=c;i++)
+ {
+  if(str[i]=='.'||str[i]=='!'||str[i]=='?')
+   l++;
+ // if((str[i]==' '&&str[i-1]!='.'&&str[i-1]!='!'&&str[i-1]!='?')||(str[i+1]=='\0'&&str[i]=='.')||(str[i]=='.'&&str[i+1]==' ')||(str[i+1]=='\0'&&str[i]=='!')||(str[i+1]=='\0'&&str[i]=='?'))
+  if(str[i]==' '||str[i]=='\0')
+   w++;
+ }
+ cout<<setw(5)<<l<<setw(18)<<w<<setw(15)<<c;
+getch();
+}

@@ -1,0 +1,43 @@
+#include<iostream.h>
+#include<conio.h>
+class fibo
+{
+int num,i;
+public:
+void getdata(int n)
+ {
+   num=n;
+ }
+int fib(int);
+void display();
+};
+int fibo::fib(int num)
+ {
+  if(num==1)
+  return 0;
+  else if(num==2)
+  return 1;
+  else
+  return(fib(num-1)+fib(num-2));
+ }
+void fibo::display()
+ {
+  for(i=1;i<=num;i++)
+  {
+  cout<<fib(i)<<" ";
+  }
+ }
+void main()
+ {
+  clrscr();
+  fibo f;
+  int n;
+  cout<<"Enter the number of terms you want to get of fibonacci series:\n";
+  cin>>n;
+  f.getdata(n);
+  f.display();
+  getch();
+ }
+
+
+
