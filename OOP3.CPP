@@ -3,12 +3,13 @@
 class fibo
 {
 int num,i;
+int fib(int); //making fib private as always called by member function only
 public:
 void getdata(int n)
  {
    num=n;
  }
-int fib(int);
+
 void display();
 };
 int fibo::fib(int num)
@@ -30,12 +31,12 @@ void fibo::display()
 void main()
  {
   clrscr();
-  fibo f;
+  fibo fibo_num;
   int n;
   cout<<"Enter the number of terms you want to get of fibonacci series:\n";
   cin>>n;
-  f.getdata(n);
-  f.display();
+  fibo_num.getdata(n);
+  fibo_num.display();
   getch();
  }
 
